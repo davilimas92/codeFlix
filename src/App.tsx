@@ -1,23 +1,23 @@
-import { ThemeProvider, Box, createTheme } from "@mui/material"
+import { ThemeProvider, Box, Typography } from "@mui/material"
 import Header from "./components/Header"
 import Layout from "./components/Layout"
-
-const theme = createTheme({})
+import { appTheme } from "./config/theme"
+import { Routes, Route, Link } from "react-router-dom"
 
 export const App = () => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={appTheme}>
     <Box
       component="main"
       sx={{
-        // display: "flex",
-        // justifyContent: "center",
-        // alignItems: "center",
         height: "100vh",
+        backgroundColor: theme => theme.palette.grey[900],
       }}
     >
       <Header />
       <Layout>
-        <h1>Davi</h1>
+        <Typography variant="h1" component="h1">
+          Welcome to CodeFlix!
+        </Typography>
       </Layout>
     </Box>
   </ThemeProvider>
